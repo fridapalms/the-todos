@@ -2,20 +2,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Todo } from './models/todos';
 import { createHtml } from './utilities';
-import "./style.scss";
+import "./scss/style.scss";
 
 
 
-let todos = [          //listan som vi börjar med, den uppdateras av localStorage
-    new Todo("Skapa en todo-lista", false),
-    new Todo("Bocka av punkterna på listan", false)
-]; 
+let todos = [];      //listan som vi börjar med, den uppdateras av localStorage    
 
-localStorage.setItem("todos", JSON.stringify(todos));
-const todosFromLs = localStorage.getItem("todos"); //hämtar listan todos från localStorage
+const todosFromLs = localStorage.getItem("todos"); //hämtar listan todos från localStorage och lägger i en variabel
 
 if (todosFromLs !== null) { //om listan i localStorage inte är tom
   todos = JSON.parse(todosFromLs); //ska todos-listan ersättas med listan från localStorage
+} else {
+    todos = [    //placeholder listan
+        new Todo("Testrad 1", false), //rad1
+        new Todo("Testrad 2", false) //rad2
+    ];   
+
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 const handleSubmit = (e) => { //när man klickar på submit-knappen
@@ -28,7 +31,7 @@ const handleSubmit = (e) => { //när man klickar på submit-knappen
     return;
   }
 
-  const newTodo = new Todo(todo); //skapar en ny text med hjälp av classen
+  const newTodo = new Todo(todo, false); //skapar en ny text med hjälp av classen
   todos.push(newTodo); //lägger till texten i listan todos
   localStorage.setItem("todos", JSON.stringify(todos)); //uppdaterar listan i localStorage
 
@@ -39,9 +42,9 @@ const handleSubmit = (e) => { //när man klickar på submit-knappen
 }
 
 //hitta formuläret
-const todoForm = document.getElementById("todo-form");
-if (todoForm) {
-  todoForm.addEventListener("submit", handleSubmit);
+const todoForm = document.getElementById("myform");
+if (todoForm) { //om formuläret hittas
+  todoForm.addEventListener("submit", handleSubmit); //lyssna efter klick på submitknappen, kör då handleSubmit
 }
 
 createHtml(todos); //skapa html för listan

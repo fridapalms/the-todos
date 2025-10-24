@@ -8,32 +8,27 @@
   </head>
   <body class="d-flex align-items-center justify-content-center vh-100">
     <div class="app">
-      <div class="container-sm px-3 bg-light main">
-        <div class="row pt-5 align-items-center justify-content-between">
-          <div class="col-9">
-            <h2 class="mb-0">ATT GÖRA</h2>
-          </div>
-          <div class="col">
-            <img src="/src/img/clipboard.png" class="img-fluid" alt="clipboard">
+      <div class="container-sm px-4 main">
+        <div class="row pt-5 align-items-center justify-content-center">
+          <div class="col d-inline-flex justify-content-center">
+            <h2 class="mb-0 px-2">ATT GÖRA</h2>
+            <img src="/src/img/clipboard.png" class="img-fluid px-2" alt="clipboard">
           </div>
         </div>
-        <div class="row py-4 align-items-center justify-content-between">
-        <form id="myform" autocomplete="off"></form>
-          <div class="col-9">
-              <input class="input-field" type="text" placeholder="Att göra..">
+        <div class="row py-4">
+        <form id="myform" autocomplete="off">
+          <div class="col-10 d-flex justify-content-start">
+              <input class="input-field" id="todo" type="text" placeholder="Att göra..">
           </div>
-          <div class="col">
+          <div class="col d-flex justify-content-end">
             <button class="btn btn-dark addbutton">+</button>
           </div>
         </form>
         </div>
-        <div class="row py-4 align-items-center justify-content-between">
-          <div class="col-9">
-            <ul id="mylist" class="text-start mylist">
-
+        <div class="row">
+          <div class="col">
+            <ul id="mylist" class="mylist">
             </ul>
-          </div>
-          <div class="col" id="divdelete">
           </div>
         </div>
       </div>

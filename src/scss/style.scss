@@ -1,0 +1,90 @@
+@import "variables";
+
+body {
+    background-color: $secondary-color;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main {
+        border-radius: 20px;
+        background-color: $app-color;
+        width: 360px;
+        min-height: 600px;
+
+        #myform {
+            display: flex;
+        }
+
+        .input-field {
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            height: 35px;
+            width: 100%;
+            padding-left: 15px;
+            font-size: 14px;
+            color: $text-color;
+            background-color: $primary-color;
+            box-sizing: border-box;
+        }
+
+        .input-field::placeholder {
+            color: $text-color;
+        } 
+
+        .input-field:focus {
+            background-color: $accent-color;
+        }
+
+        .input-field:hover {
+            background-color: $accent-color;
+            cursor: pointer;
+        }
+
+        .addbutton {
+            border-radius: 50%;
+            background-color: $primary-color;
+            border: none;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+        }
+       
+        .mylist {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            text-align: start;
+            list-style: none;
+            list-style-type: none;
+            padding: 0px;
+            gap: 15px;
+            max-height: 280px;
+            overflow: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: $primary-color transparent;
+
+            .checkbox {
+                width: 20px;
+                height: 20px;
+            }
+
+            .todo-text {
+                width: 250px;
+            }
+
+            .remove-button {
+                text-align: end;
+            }
+
+            .done {
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+        }
+    }
+}

@@ -1,15 +1,17 @@
 export const createHtml = (todos) => { //funktion som skapar vår HTML
     const myList = document.getElementById("mylist"); //hämtar UL-taggen
     myList.innerHTML = ""; //tömmer UL-taggen på innehåll
-    const divDelete = document.getElementById("divdelete"); //hämtar div för removeknapp
 
     todos.forEach((todo, index) => { //skapar en loop för listan todos
 
         //skapar elementen
+        const checkbox = document.createElement("img"); //skapar img-tagg för checkboxen
         const todoText = document.createElement("li"); //punkterna i listan
         const remove = document.createElement("div"); //ta bort-div för varje punkt
 
         //ändra elementen
+        checkbox.src = "/src/img/unchecked.png"; //sätter bild på checkbox
+        checkbox.className = "checkbox"; //get klassnamnet checkbox
         todoText.className = "todo-text"; //lägger till klassnamn för punkterna
         todoText.innerHTML = todo.string; //lägger till innehåll från vår lista i punkten
         remove.className = "remove-button"; //lägger till klassnamn för ta bort-diven
@@ -18,6 +20,7 @@ export const createHtml = (todos) => { //funktion som skapar vår HTML
         //om vi klickar på en to do, lägg till klassen som gör texten överstruken
         if (todo.done) {
             todoText.classList.add("done"); //klassen done läggs till på punkten
+            checkbox.src ="/src/img/checked.png";
         }
 
         //när du klickar på todo-texten, växla done-status och spara
@@ -37,8 +40,9 @@ export const createHtml = (todos) => { //funktion som skapar vår HTML
 
         localStorage.setItem("todos", JSON.stringify(todos)); //sparar listan i localStorage
 
-        //lägg elementen i DOM
+        //lägger elementen i DOM
+        myList.appendChild(checkbox); //lägger till checkboxen i UL-taggen
         myList.appendChild(todoText); //lägger LI-taggarna i UL-taggen
-        divDelete.appendChild(remove); //lägger remove-diven i UL-taggen
+        myList.appendChild(remove); //lägger remove-diven i UL-taggen
     });
 };
