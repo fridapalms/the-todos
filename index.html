@@ -6,11 +6,37 @@
     <title>The Todos</title>
     <script type="module" src="/src/main.js" defer></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Vite!</h1>
-      <button class="btn btn-primary">Primary button</button>
+  <body class="d-flex align-items-center justify-content-center vh-100">
+    <div class="app">
+      <div class="container-sm px-3 bg-light main">
+        <div class="row pt-5 align-items-center justify-content-between">
+          <div class="col-9">
+            <h2 class="mb-0">ATT GÖRA</h2>
+          </div>
+          <div class="col">
+            <img src="/src/img/clipboard.png" class="img-fluid" alt="clipboard">
+          </div>
+        </div>
+        <div class="row py-4 align-items-center justify-content-between">
+        <form id="myform" autocomplete="off"></form>
+          <div class="col-9">
+              <input class="input-field" type="text" placeholder="Att göra..">
+          </div>
+          <div class="col">
+            <button class="btn btn-dark addbutton">+</button>
+          </div>
+        </form>
+        </div>
+        <div class="row py-4 align-items-center justify-content-between">
+          <div class="col-9">
+            <ul id="mylist" class="text-start mylist">
+
+            </ul>
+          </div>
+          <div class="col" id="divdelete">
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
