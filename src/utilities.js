@@ -6,8 +6,9 @@ export const createHtml = (todos) => { //funktion som skapar vår HTML
 
         //skapar elementen
         const checkbox = document.createElement("img"); //skapar img-tagg för checkboxen
-        const todoText = document.createElement("li"); //punkterna i listan
+        const todoText = document.createElement("p"); //p-tagg
         const remove = document.createElement("div"); //ta bort-div för varje punkt
+        const li = document.createElement("li"); //li-tagg
 
         //ändra elementen
         checkbox.src = "/src/img/unchecked.png"; //sätter bild på checkbox
@@ -15,7 +16,8 @@ export const createHtml = (todos) => { //funktion som skapar vår HTML
         todoText.className = "todo-text"; //lägger till klassnamn för punkterna
         todoText.innerHTML = todo.string; //lägger till innehåll från vår lista i punkten
         remove.className = "remove-button"; //lägger till klassnamn för ta bort-diven
-        remove.innerHTML = "&#10005;" //lägger till X-symbol i ta bort-diven
+        remove.innerHTML = "&#10005;"; //lägger till X-symbol i ta bort-diven
+        li.className = "myli"; //lägger klassnamn på li-tagg
         
         //om vi klickar på en to do, lägg till klassen som gör texten överstruken
         if (todo.done) {
@@ -41,8 +43,9 @@ export const createHtml = (todos) => { //funktion som skapar vår HTML
         localStorage.setItem("todos", JSON.stringify(todos)); //sparar listan i localStorage
 
         //lägger elementen i DOM
-        myList.appendChild(checkbox); //lägger till checkboxen i UL-taggen
-        myList.appendChild(todoText); //lägger LI-taggarna i UL-taggen
-        myList.appendChild(remove); //lägger remove-diven i UL-taggen
+        li.appendChild(checkbox); //lägger till checkboxen i li-taggen
+        li.appendChild(todoText); //lägger p-tagg i li-taggen
+        li.appendChild(remove); //lägger remove-diven i li-taggen
+        myList.appendChild(li); //lägger li i ul-taggen
     });
 };

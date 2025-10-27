@@ -1,90 +1,115 @@
 @import "variables";
 
 body {
-    background-color: $secondary-color;
+  background-color: $secondary-color;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .main {
+  .main {
+    border-radius: 20px;
+    background-color: $app-color;
+    width: 360px;
+    height: 470px;
+
+    .clipboard {
+      height: 30px;
+    }
+
+    .sort {
+      height: 30px;
+      cursor: pointer;
+    }
+
+    #myform {
+      display: flex;
+
+      .input-field {
         border-radius: 20px;
-        background-color: $app-color;
-        width: 360px;
-        min-height: 600px;
+        border: none;
+        outline: none;
+        height: 35px;
+        width: 250px;
+        padding-left: 15px;
+        margin-right: 15px;
+        font-size: 14px;
+        color: $text-color;
+        background-color: $primary-color;
+        box-sizing: border-box;
 
-        #myform {
-            display: flex;
+        &::placeholder {
+          color: $text-color;
         }
 
-        .input-field {
-            border-radius: 20px;
-            border: none;
-            outline: none;
-            height: 35px;
-            width: 100%;
-            padding-left: 15px;
+        &:focus {
+          background-color: $accent-color;
+        }
+
+        &:hover {
+          background-color: $accent-color;
+          cursor: pointer;
+        }
+      }
+
+      .addbutton {
+        border-radius: 50%;
+        background-color: $primary-color;
+        color: $text-color;
+        border: none;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+
+        &:hover {
+          background-color: $accent-color;
+        }
+      }
+    }
+
+    .mylist {
+      list-style: none;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      height: 280px;
+      overflow: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: $primary-color transparent;
+
+      .myli {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            text-align: start;
+        }
+
+        .todo-text {
+            width: 230px;
+            margin: 0px;
+            cursor: pointer;
             font-size: 14px;
-            color: $text-color;
-            background-color: $primary-color;
-            box-sizing: border-box;
         }
 
-        .input-field::placeholder {
-            color: $text-color;
-        } 
-
-        .input-field:focus {
-            background-color: $accent-color;
-        }
-
-        .input-field:hover {
-            background-color: $accent-color;
+        .remove-button {
+            text-align: end;
             cursor: pointer;
         }
 
-        .addbutton {
-            border-radius: 50%;
-            background-color: $primary-color;
-            border: none;
-            width: 35px;
-            height: 35px;
-            text-align: center;
+        .done {
+            text-decoration: line-through;
+            opacity: 0.5;
         }
-       
-        .mylist {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: center;
-            text-align: start;
-            list-style: none;
-            list-style-type: none;
-            padding: 0px;
-            gap: 15px;
-            max-height: 280px;
-            overflow: scroll;
-            scrollbar-width: thin;
-            scrollbar-color: $primary-color transparent;
-
-            .checkbox {
-                width: 20px;
-                height: 20px;
-            }
-
-            .todo-text {
-                width: 250px;
-            }
-
-            .remove-button {
-                text-align: end;
-            }
-
-            .done {
-                text-decoration: line-through;
-                opacity: 0.5;
-            }
-        }
+      }
     }
+  }
 }

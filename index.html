@@ -8,27 +8,25 @@
   </head>
   <body class="d-flex align-items-center justify-content-center vh-100">
     <div class="app">
-      <div class="container-sm px-4 main">
-        <div class="row pt-5 align-items-center justify-content-center">
-          <div class="col d-inline-flex justify-content-center">
+      <div class="container px-4 main">
+        <div class="row pt-4">
+          <div class="col d-inline-flex align-items-center justify-content-between firstcolumn">
+            <img src="/src/img/clipboard.png" class="img-fluid px-2 clipboard" alt="clipboard" />
             <h2 class="mb-0 px-2">ATT GÖRA</h2>
-            <img src="/src/img/clipboard.png" class="img-fluid px-2" alt="clipboard">
+            <img src="/src/img/sort.png" class="img-fluid px-2 sort" id="sort" alt="sorting" />
           </div>
         </div>
         <div class="row py-4">
-        <form id="myform" autocomplete="off">
-          <div class="col-10 d-flex justify-content-start">
-              <input class="input-field" id="todo" type="text" placeholder="Att göra..">
+          <div class="col d-flex align-items-center justify-content-center">
+            <form id="myform" autocomplete="off">
+              <input class="input-field" id="todo" type="text" placeholder="Att göra.." />
+              <button class="btn btn-dark addbutton">+</button>
+            </form>
           </div>
-          <div class="col d-flex justify-content-end">
-            <button class="btn btn-dark addbutton">+</button>
-          </div>
-        </form>
         </div>
         <div class="row">
           <div class="col">
-            <ul id="mylist" class="mylist">
-            </ul>
+            <ul id="mylist" class="d-flex flex-column align-items-center mylist"></ul>
           </div>
         </div>
       </div>
