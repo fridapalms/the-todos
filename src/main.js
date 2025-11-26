@@ -81,10 +81,10 @@ sort.addEventListener("click", () => {
 
   if (reversed) {
     //om listan är reversed (true) (nerifrån och upp)
-    sort.src = "/sort2.png"; //använd denna ikon
+    sort.src = "./public/sort2.png"; //använd denna ikon
   } else {
     //om inte (reverse är false, listan är uppifrån och ner)
-    sort.src = "/sort.png"; //använd denna ikon
+    sort.src = "./public/sort.png"; //använd denna ikon
   }
 
   createHtml(todos); //skriver om listan med uppdaterad status av ordningen
@@ -100,7 +100,7 @@ if (orderFromLs !== null) {
   reversed = JSON.parse(orderFromLs); //konverterar stringen till en riktig boolean
 }
 
-sort.src = reversed ? "/sort2.png" : "/sort.png"; //om reversed är true används första länken, om false används den andra länken
+sort.src = reversed ? "./public/sort2.png" : "./public/sort.png"; //om reversed är true används första länken, om false används den andra länken
 createHtml(todos); //skapa html för listan i den rätta ordningen
 
 //-----------------------------------
