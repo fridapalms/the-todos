@@ -13,7 +13,7 @@ export const createHtml = (todos) => {
     const li = document.createElement("li"); //li-tagg
 
     //ändra elementen
-    checkbox.src = "/src/img/unchecked.png"; //sätter bild på checkbox
+    checkbox.src = "src/img/unchecked.png"; //sätter bild på checkbox
     checkbox.className = "checkbox"; //get klassnamnet checkbox
     todoText.className = "todo-text"; //lägger till klassnamn för punkterna
     todoText.innerHTML = todo.string; //lägger till innehåll från vår lista i punkten
@@ -24,7 +24,7 @@ export const createHtml = (todos) => {
     //om vi klickar på en to do, lägg till klassen som gör texten överstruken
     if (todo.done) {
       todoText.classList.add("done"); //klassen done läggs till på punkten
-      checkbox.src = "./src/img/checked.png";
+      checkbox.src = "src/img/checked.png";
     }
 
     //när du klickar på todo-texten, växla done-status och spara
